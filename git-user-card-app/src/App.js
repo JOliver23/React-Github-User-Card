@@ -1,9 +1,11 @@
 import React from 'react';
+import axios from 'axios';
 import UserCard from './components/UserCard';
 
 class App extends React.Component {
   state = {
     user: [],
+    followers: [],
     error: "",
     userName: "JOliver23"
   }
@@ -22,6 +24,14 @@ class App extends React.Component {
       .catch(err => {
         console.error("jo: App.js: App: CDM: fetch failed")
       });
+      fetch("https://api.github.com/users/JOliver23/followers")
+        .then(response => response.json())
+        .then(followers => {
+          console.log("jo: App.js: App: CDM: CDM followers call ", followers)
+        })
+        .catch(err => {
+          console.error("jo: App.js: App: CDM: follower fetch failed")
+        });
   };
 
   componentDidUpdate(prevProps, PrevState) {
@@ -51,6 +61,16 @@ class App extends React.Component {
         console.log("jo: App.js: App: handleUserNameChange: fetch failed: ", err);
         this.setState({error: err});
       });
+
+      fetch(`https://api.github.com/users/${this.state.userName}/followers`)
+      .then(response => response.json())
+      .then(followers => {
+        console.log("jo: App.js: App: CDM: CDM followers call ", followers)
+        this.setState({followers: followers});
+      })
+      .catch(err => {
+        console.error("jo: App.js: App: CDM: follower fetch failed")
+      });
   };
 
 
@@ -69,6 +89,7 @@ class App extends React.Component {
         <button onClick={this.handleUserNameChange}>Find Card</button>
         <UserCard 
           user={this.state.user}
+          followers={this.state.followers}
           //any other props i may pass
         />
       </div>
