@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import UserCard from './components/UserCard';
+import './App.css';
 
 class App extends React.Component {
   state = {
@@ -47,7 +48,7 @@ class App extends React.Component {
   handleUserNameChange = e => {
     fetch(`https://api.github.com/users/${this.state.userName}`)
       .then(response => {
-        console.log(response);
+        console.log("jo: App.js: App: handleUserNameChange", response);
         return response.json();
       })
       .then(user => {

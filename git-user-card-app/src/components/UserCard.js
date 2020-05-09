@@ -6,7 +6,7 @@ function UserCard(props) {
     console.log("jo: UserCard.js: UserCard: render run", props);
     return (
         <>
-            <div>
+            <div className="user-card">
                 <img src={props.user.avatar_url} alt="github user avatar"/>
                 <h2>{props.user.name}</h2>
                 <h4>Username: {props.user.login}</h4>
@@ -15,7 +15,7 @@ function UserCard(props) {
                     <p>Repositories: {props.user.public_repos}</p>
                     <p>Followers: {props.user.followers}</p>
                     <p>Following: {props.user.following}</p>
-                    <p>GitHub: {props.user.html_url}</p>
+                    <a href={props.user.html_url}>GitHub</a>
                 </div>
             </div>
         
