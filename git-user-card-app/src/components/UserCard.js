@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 function UserCard(props) {
 
-    console.log("jo: UserCard.js: UserCard: render run");
+    console.log("jo: UserCard.js: UserCard: render run", props);
     return (
         <div>
-            <img src={"this.state.user.avatar_url"} alt="github user avatar"/>
-            <h2>{"this.state.user.name"}</h2>
-            <h4>Username: {"this.state.user.login"}</h4>
+            <img src={props.user.avatar_url} alt="github user avatar"/>
+            <h2>{props.user.name}</h2>
+            <h4>Username: {props.user.login}</h4>
             <div className="gen-info closed">
                 <p>Location: {"this.state.user.location"}</p>
                 <p>Repositories: {"this.state.user.public_repos"}</p>

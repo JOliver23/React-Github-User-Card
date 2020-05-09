@@ -66,8 +66,9 @@ class App extends React.Component {
           value={this.state.userName}
           onChange={this.handleChange}
         />
+        <button onClick={this.handleUserNameChange}>Find Card</button>
         <UserCard 
-          //user={this.state.user}
+          user={this.state.user}
           //any other props i may pass
         />
       </div>
