@@ -1,0 +1,39 @@
+.App {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-evenly;
+  align-items: center;
+  background: radial-gradient(silver, slategrey, silver, slateblue, slategrey);
+}
+
+h1 {
+  background-color: #282c34;
+  color: papayawhip;
+}
+
+a {
+  color: #61dafb;
+}
+
+img {
+  width: 30rem;
+  height: 30rem;
+}
+
+input {
+  background-color: papayawhip;
+  border: .2rem solid rgb(224, 24, 91);
+  border-radius: 100%;
+  padding: .8rem;
+}
+
+.user-card {
+  padding: 2rem;
+  background: linear-gradient(45deg, lavender, rgb(233, 99, 233))
+}
+
+.follower-card {
+  padding: 2rem;
+  background: linear-gradient(135deg, rgb(247, 182, 182), rgb(233, 99, 99))
+}
+
