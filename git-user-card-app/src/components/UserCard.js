@@ -10,11 +10,11 @@ function UserCard(props) {
             <h2>{props.user.name}</h2>
             <h4>Username: {props.user.login}</h4>
             <div className="gen-info closed">
-                <p>Location: {"this.state.user.location"}</p>
-                <p>Repositories: {"this.state.user.public_repos"}</p>
-                <p>Followers: {"this.state.user.followers"}</p>
-                <p>Following: {"this.state.user.following"}</p>
-                <p>GitHub: {"this.state.user.html_url"}</p>
+                <p>Location: {props.user.location}</p>
+                <p>Repositories: {props.user.public_repos}</p>
+                <p>Followers: {props.user.followers}</p>
+                <p>Following: {props.user.following}</p>
+                <p>GitHub: {props.user.html_url}</p>
             </div>
             <button>+++ expand +++</button> <span>onClick => toggle className'closed' display none</span>
         </div>
