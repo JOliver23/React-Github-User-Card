@@ -1,4 +1,5 @@
 import React from 'react';
+import UserCard from './components/UserCard';
 
 class App extends React.Component {
   state = {
@@ -7,14 +8,14 @@ class App extends React.Component {
   }
   componentDidMount() {
       console.log("jo: App.js: App: CDM: CDM run")
-  //   fetch("https://api.github.com/users/JOliver23")
-  //     .then(response => response.json())
-  //     .then(user => {
-  //       console.log("jo: App.js: App: CDM: response github api", user.message);
-  //     })
-  //     .catch(err => {
-  //       console.error("jo: App.js: App: CDM: fetch failed")
-  //     })
+    fetch("https://api.github.com/users/JOliver23")
+      .then(response => response.json())
+      .then(user => {
+        console.log("jo: App.js: App: CDM: response github api", user);
+      })
+      .catch(err => {
+        console.error("jo: App.js: App: CDM: fetch failed")
+      })
   }
 
   // handleChange = e => {
